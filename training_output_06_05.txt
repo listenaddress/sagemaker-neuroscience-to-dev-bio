@@ -1,0 +1,1355 @@
+bash: cannot set terminal process group (-1): Inappropriate ioctl for device
+bash: no job control in this shell
+2022-06-05 12:12:50,216 sagemaker-training-toolkit INFO     Imported framework sagemaker_pytorch_container.training
+2022-06-05 12:12:50,235 sagemaker_pytorch_container.training INFO     Block until all host DNS lookups succeed.
+2022-06-05 12:12:50,241 sagemaker_pytorch_container.training INFO     Invoking user training script.
+2022-06-05 12:12:50,654 sagemaker-training-toolkit INFO     Installing dependencies from requirements.txt:
+/opt/conda/bin/python3.8 -m pip install -r requirements.txt
+Collecting nltk
+Downloading nltk-3.7-py3-none-any.whl (1.5 MB)
+Collecting absl-py
+Downloading absl_py-1.1.0-py3-none-any.whl (123 kB)
+Collecting rouge-score
+Downloading rouge_score-0.0.4-py2.py3-none-any.whl (22 kB)
+Requirement already satisfied: joblib in /opt/conda/lib/python3.8/site-packages (from nltk->-r requirements.txt (line 1)) (1.0.1)
+Requirement already satisfied: click in /opt/conda/lib/python3.8/site-packages (from nltk->-r requirements.txt (line 1)) (8.0.3)
+Requirement already satisfied: tqdm in /opt/conda/lib/python3.8/site-packages (from nltk->-r requirements.txt (line 1)) (4.62.3)
+Requirement already satisfied: regex>=2021.8.3 in /opt/conda/lib/python3.8/site-packages (from nltk->-r requirements.txt (line 1)) (2021.11.2)
+Requirement already satisfied: six>=1.14.0 in /opt/conda/lib/python3.8/site-packages (from rouge-score->-r requirements.txt (line 3)) (1.16.0)
+Requirement already satisfied: numpy in /opt/conda/lib/python3.8/site-packages (from rouge-score->-r requirements.txt (line 3)) (1.19.1)
+Installing collected packages: nltk, absl-py, rouge-score
+Successfully installed absl-py-1.1.0 nltk-3.7 rouge-score-0.0.4
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+2022-06-05 12:12:53,633 sagemaker-training-toolkit INFO     Invoking user script
+Training Env:
+{
+    "additional_framework_parameters": {},
+    "channel_input_dirs": {},
+    "current_host": "algo-1",
+    "framework_module": "sagemaker_pytorch_container.training:main",
+    "hosts": [
+        "algo-1"
+    ],
+    "hyperparameters": {
+        "epochs": 1,
+        "model_name": "neuroscience-to-dev-bio"
+    },
+    "input_config_dir": "/opt/ml/input/config",
+    "input_data_config": {},
+    "input_dir": "/opt/ml/input",
+    "is_master": true,
+    "job_name": "huggingface-pytorch-training-2022-06-05-12-06-38-531",
+    "log_level": 20,
+    "master_hostname": "algo-1",
+    "model_dir": "/opt/ml/model",
+    "module_dir": "s3://sagemaker-us-east-1-641078039118/huggingface-pytorch-training-2022-06-05-12-06-38-531/source/sourcedir.tar.gz",
+    "module_name": "neuroscience_to_dev_bio",
+    "network_interface_name": "eth0",
+    "num_cpus": 64,
+    "num_gpus": 1,
+    "output_data_dir": "/opt/ml/output/data",
+    "output_dir": "/opt/ml/output",
+    "output_intermediate_dir": "/opt/ml/output/intermediate",
+    "resource_config": {
+        "current_host": "algo-1",
+        "current_instance_type": "ml.g4dn.16xlarge",
+        "current_group_name": "homogeneousCluster",
+        "hosts": [
+            "algo-1"
+        ],
+        "instance_groups": [
+            {
+                "instance_group_name": "homogeneousCluster",
+                "instance_type": "ml.g4dn.16xlarge",
+                "hosts": [
+                    "algo-1"
+                ]
+            }
+        ],
+        "network_interface_name": "eth0"
+    },
+    "user_entry_point": "neuroscience_to_dev_bio.py"
+}
+Environment variables:
+SM_HOSTS=["algo-1"]
+SM_NETWORK_INTERFACE_NAME=eth0
+SM_HPS=
+{
+    "epochs": 1,
+    "model_name": "neuroscience-to-dev-bio"
+}
+SM_USER_ENTRY_POINT=neuroscience_to_dev_bio.py
+SM_FRAMEWORK_PARAMS=
+{}
+SM_RESOURCE_CONFIG=
+{
+    "current_group_name": "homogeneousCluster",
+    "current_host": "algo-1",
+    "current_instance_type": "ml.g4dn.16xlarge",
+    "hosts": [
+        "algo-1"
+    ],
+    "instance_groups": [
+        {
+            "hosts": [
+                "algo-1"
+            ],
+            "instance_group_name": "homogeneousCluster",
+            "instance_type": "ml.g4dn.16xlarge"
+        }
+    ],
+    "network_interface_name": "eth0"
+}
+SM_INPUT_DATA_CONFIG=
+{}
+SM_OUTPUT_DATA_DIR=/opt/ml/output/data
+SM_CHANNELS=[]
+SM_CURRENT_HOST=algo-1
+SM_MODULE_NAME=neuroscience_to_dev_bio
+SM_LOG_LEVEL=20
+SM_FRAMEWORK_MODULE=sagemaker_pytorch_container.training:main
+SM_INPUT_DIR=/opt/ml/input
+SM_INPUT_CONFIG_DIR=/opt/ml/input/config
+SM_OUTPUT_DIR=/opt/ml/output
+SM_NUM_CPUS=64
+SM_NUM_GPUS=1
+SM_MODEL_DIR=/opt/ml/model
+SM_MODULE_DIR=s3://sagemaker-us-east-1-641078039118/huggingface-pytorch-training-2022-06-05-12-06-38-531/source/sourcedir.tar.gz
+SM_TRAINING_ENV=
+{
+    "additional_framework_parameters": {},
+    "channel_input_dirs": {},
+    "current_host": "algo-1",
+    "framework_module": "sagemaker_pytorch_container.training:main",
+    "hosts": [
+        "algo-1"
+    ],
+    "hyperparameters": {
+        "epochs": 1,
+        "model_name": "neuroscience-to-dev-bio"
+    },
+    "input_config_dir": "/opt/ml/input/config",
+    "input_data_config": {},
+    "input_dir": "/opt/ml/input",
+    "is_master": true,
+    "job_name": "huggingface-pytorch-training-2022-06-05-12-06-38-531",
+    "log_level": 20,
+    "master_hostname": "algo-1",
+    "model_dir": "/opt/ml/model",
+    "module_dir": "s3://sagemaker-us-east-1-641078039118/huggingface-pytorch-training-2022-06-05-12-06-38-531/source/sourcedir.tar.gz",
+    "module_name": "neuroscience_to_dev_bio",
+    "network_interface_name": "eth0",
+    "num_cpus": 64,
+    "num_gpus": 1,
+    "output_data_dir": "/opt/ml/output/data",
+    "output_dir": "/opt/ml/output",
+    "output_intermediate_dir": "/opt/ml/output/intermediate",
+    "resource_config": {
+        "current_group_name": "homogeneousCluster",
+        "current_host": "algo-1",
+        "current_instance_type": "ml.g4dn.16xlarge",
+        "hosts": [
+            "algo-1"
+        ],
+        "instance_groups": [
+            {
+                "hosts": [
+                    "algo-1"
+                ],
+                "instance_group_name": "homogeneousCluster",
+                "instance_type": "ml.g4dn.16xlarge"
+            }
+        ],
+        "network_interface_name": "eth0"
+    },
+    "user_entry_point": "neuroscience_to_dev_bio.py"
+}
+SM_USER_ARGS=["--epochs","1","--model_name","neuroscience-to-dev-bio"]
+SM_OUTPUT_INTERMEDIATE_DIR=/opt/ml/output/intermediate
+SM_HP_EPOCHS=1
+SM_HP_MODEL_NAME=neuroscience-to-dev-bio
+PYTHONPATH=/opt/ml/code:/opt/conda/bin:/opt/conda/lib/python38.zip:/opt/conda/lib/python3.8:/opt/conda/lib/python3.8/lib-dynload:/opt/conda/lib/python3.8/site-packages
+Invoking script with the following command:
+/opt/conda/bin/python3.8 neuroscience_to_dev_bio.py --epochs 1 --model_name neuroscience-to-dev-bio
+**** TRAINING!
+[nltk_data] Downloading package punkt to /root/nltk_data...
+[nltk_data]   Unzipping tokenizers/punkt.zip.
+Downloading:   0%|          | 0.00/2.17k [00:00<?, ?B/s]
+Downloading: 5.61kB [00:00, 5.13MB/s]
+Downloading:   0%|          | 0.00/3.02k [00:00<?, ?B/s]
+Downloading: 100%|██████████| 3.02k/3.02k [00:00<00:00, 3.90MB/s]
+Downloading:   0%|          | 0.00/2.12G [00:00<?, ?B/s]
+Downloading:   0%|          | 3.45M/2.12G [00:00<01:02, 36.1MB/s]
+Downloading:   0%|          | 7.65M/2.12G [00:00<00:55, 40.8MB/s]
+Downloading:   1%|          | 17.4M/2.12G [00:00<00:32, 68.6MB/s]
+Downloading:   1%|          | 26.2M/2.12G [00:00<00:28, 78.0MB/s]
+Downloading:   2%|▏         | 33.6M/2.12G [00:00<00:42, 52.2MB/s]
+Downloading:   2%|▏         | 40.0M/2.12G [00:00<00:45, 49.5MB/s]
+Downloading:   2%|▏         | 49.5M/2.12G [00:00<00:35, 61.9MB/s]
+Downloading:   3%|▎         | 56.2M/2.12G [00:01<00:38, 57.9MB/s]
+Downloading:   3%|▎         | 64.0M/2.12G [00:01<00:39, 55.2MB/s]
+Downloading:   3%|▎         | 72.1M/2.12G [00:01<00:36, 60.8MB/s]
+Downloading:   4%|▎         | 79.5M/2.12G [00:01<00:33, 65.0MB/s]
+Downloading:   4%|▍         | 86.1M/2.12G [00:01<00:37, 58.1MB/s]
+Downloading:   4%|▍         | 92.0M/2.12G [00:01<00:43, 50.3MB/s]
+Downloading:   4%|▍         | 97.1M/2.12G [00:01<00:51, 42.0MB/s]
+Downloading:   5%|▍         | 104M/2.12G [00:02<00:46, 46.3MB/s]
+Downloading:   5%|▌         | 112M/2.12G [00:02<00:51, 42.2MB/s]
+Downloading:   5%|▌         | 118M/2.12G [00:02<00:54, 39.7MB/s]
+Downloading:   6%|▌         | 122M/2.12G [00:02<00:53, 40.0MB/s]
+Downloading:   6%|▌         | 128M/2.12G [00:02<00:53, 39.7MB/s]
+Downloading:   6%|▌         | 134M/2.12G [00:02<00:52, 40.5MB/s]
+Downloading:   6%|▋         | 138M/2.12G [00:03<00:56, 38.0MB/s]
+Downloading:   7%|▋         | 145M/2.12G [00:03<00:47, 44.8MB/s]
+Downloading:   7%|▋         | 152M/2.12G [00:03<00:42, 49.3MB/s]
+Downloading:   7%|▋         | 161M/2.12G [00:03<00:34, 61.5MB/s]
+Downloading:   8%|▊         | 168M/2.12G [00:03<00:38, 55.0MB/s]
+Downloading:   8%|▊         | 176M/2.12G [00:03<00:34, 61.5MB/s]
+Downloading:   8%|▊         | 184M/2.12G [00:03<00:31, 65.5MB/s]
+Downloading:   9%|▉         | 190M/2.12G [00:03<00:32, 63.0MB/s]
+Downloading:   9%|▉         | 196M/2.12G [00:03<00:38, 53.4MB/s]
+Downloading:   9%|▉         | 202M/2.12G [00:04<00:45, 45.6MB/s]
+Downloading:  10%|▉         | 208M/2.12G [00:04<00:41, 49.1MB/s]
+Downloading:  10%|▉         | 216M/2.12G [00:04<00:35, 57.0MB/s]
+Downloading:  10%|█         | 224M/2.12G [00:04<00:35, 57.1MB/s]
+Downloading:  11%|█         | 234M/2.12G [00:04<00:29, 67.8MB/s]
+Downloading:  11%|█         | 240M/2.12G [00:04<00:32, 62.8MB/s]
+Downloading:  11%|█▏        | 248M/2.12G [00:04<00:36, 54.6MB/s]
+Downloading:  12%|█▏        | 256M/2.12G [00:05<00:33, 60.4MB/s]
+Downloading:  12%|█▏        | 264M/2.12G [00:05<00:35, 56.9MB/s]
+Downloading:  13%|█▎        | 271M/2.12G [00:05<00:32, 61.4MB/s]
+Downloading:  13%|█▎        | 278M/2.12G [00:05<00:37, 53.2MB/s]
+Downloading:  13%|█▎        | 286M/2.12G [00:05<00:31, 62.1MB/s]
+Downloading:  13%|█▎        | 293M/2.12G [00:05<00:32, 60.9MB/s]
+Downloading:  14%|█▍        | 299M/2.12G [00:05<00:37, 52.3MB/s]
+Downloading:  14%|█▍        | 306M/2.12G [00:05<00:33, 58.2MB/s]
+Downloading:  15%|█▍        | 316M/2.12G [00:06<00:28, 68.0MB/s]
+Downloading:  15%|█▍        | 323M/2.12G [00:06<00:31, 60.9MB/s]
+Downloading:  15%|█▌        | 329M/2.12G [00:06<00:31, 61.4MB/s]
+Downloading:  15%|█▌        | 336M/2.12G [00:06<00:30, 62.6MB/s]
+Downloading:  16%|█▌        | 344M/2.12G [00:06<00:28, 66.6MB/s]
+Downloading:  16%|█▌        | 351M/2.12G [00:06<00:27, 68.1MB/s]
+Downloading:  17%|█▋        | 359M/2.12G [00:06<00:26, 72.9MB/s]
+Downloading:  17%|█▋        | 368M/2.12G [00:06<00:23, 79.5MB/s]
+Downloading:  17%|█▋        | 376M/2.12G [00:06<00:25, 74.7MB/s]
+Downloading:  18%|█▊        | 384M/2.12G [00:07<00:24, 75.9MB/s]
+Downloading:  18%|█▊        | 392M/2.12G [00:07<00:29, 63.6MB/s]
+Downloading:  18%|█▊        | 400M/2.12G [00:07<00:29, 63.5MB/s]
+Downloading:  19%|█▉        | 408M/2.12G [00:07<00:29, 63.1MB/s]
+Downloading:  19%|█▉        | 416M/2.12G [00:07<00:28, 64.5MB/s]
+Downloading:  20%|█▉        | 424M/2.12G [00:07<00:29, 62.6MB/s]
+Downloading:  20%|█▉        | 430M/2.12G [00:07<00:29, 62.6MB/s]
+Downloading:  20%|██        | 436M/2.12G [00:08<00:29, 62.2MB/s]
+Downloading:  20%|██        | 442M/2.12G [00:08<00:41, 43.2MB/s]
+Downloading:  21%|██        | 448M/2.12G [00:08<00:39, 46.3MB/s]
+Downloading:  21%|██        | 456M/2.12G [00:08<00:35, 50.6MB/s]
+Downloading:  21%|██▏       | 464M/2.12G [00:08<00:33, 53.2MB/s]
+Downloading:  22%|██▏       | 470M/2.12G [00:08<00:32, 55.0MB/s]
+Downloading:  22%|██▏       | 476M/2.12G [00:08<00:34, 52.0MB/s]
+Downloading:  22%|██▏       | 484M/2.12G [00:09<00:29, 60.0MB/s]
+Downloading:  23%|██▎       | 490M/2.12G [00:09<00:34, 51.6MB/s]
+Downloading:  23%|██▎       | 496M/2.12G [00:09<00:32, 54.2MB/s]
+Downloading:  23%|██▎       | 502M/2.12G [00:09<00:31, 55.8MB/s]
+Downloading:  23%|██▎       | 508M/2.12G [00:09<00:32, 53.9MB/s]
+Downloading:  24%|██▎       | 513M/2.12G [00:09<00:36, 47.8MB/s]
+Downloading:  24%|██▍       | 520M/2.12G [00:09<00:36, 47.4MB/s]
+Downloading:  24%|██▍       | 529M/2.12G [00:09<00:28, 59.8MB/s]
+Downloading:  25%|██▍       | 536M/2.12G [00:10<00:29, 57.6MB/s]
+Downloading:  25%|██▌       | 544M/2.12G [00:10<00:26, 64.1MB/s]
+Downloading:  25%|██▌       | 552M/2.12G [00:10<00:30, 56.4MB/s]
+Downloading:  26%|██▌       | 558M/2.12G [00:10<00:32, 52.4MB/s]
+Downloading:  26%|██▌       | 564M/2.12G [00:10<00:33, 50.5MB/s]
+Downloading:  26%|██▌       | 569M/2.12G [00:10<00:32, 51.1MB/s]
+Downloading:  26%|██▋       | 575M/2.12G [00:10<00:34, 49.1MB/s]
+Downloading:  27%|██▋       | 579M/2.12G [00:10<00:34, 48.5MB/s]
+Downloading:  27%|██▋       | 584M/2.12G [00:11<00:47, 34.8MB/s]
+Downloading:  27%|██▋       | 591M/2.12G [00:11<00:44, 37.6MB/s]
+Downloading:  27%|██▋       | 595M/2.12G [00:11<00:44, 37.0MB/s]
+Downloading:  28%|██▊       | 600M/2.12G [00:11<00:39, 41.2MB/s]
+Downloading:  28%|██▊       | 608M/2.12G [00:11<00:36, 44.3MB/s]
+Downloading:  28%|██▊       | 614M/2.12G [00:11<00:35, 46.4MB/s]
+Downloading:  29%|██▊       | 620M/2.12G [00:11<00:33, 48.9MB/s]
+Downloading:  29%|██▉       | 625M/2.12G [00:12<00:33, 48.6MB/s]
+Downloading:  29%|██▉       | 632M/2.12G [00:12<00:31, 52.0MB/s]
+Downloading:  29%|██▉       | 640M/2.12G [00:12<00:26, 59.7MB/s]
+Downloading:  30%|██▉       | 648M/2.12G [00:12<00:27, 57.2MB/s]
+Downloading:  30%|███       | 656M/2.12G [00:12<00:27, 58.5MB/s]
+Downloading:  31%|███       | 662M/2.12G [00:12<00:28, 56.2MB/s]
+Downloading:  31%|███       | 668M/2.12G [00:12<00:30, 51.5MB/s]
+Downloading:  31%|███       | 673M/2.12G [00:12<00:30, 50.7MB/s]
+Downloading:  31%|███       | 678M/2.12G [00:13<00:31, 50.2MB/s]
+Downloading:  31%|███▏      | 682M/2.12G [00:13<00:39, 39.7MB/s]
+Downloading:  32%|███▏      | 688M/2.12G [00:13<00:39, 39.4MB/s]
+Downloading:  32%|███▏      | 696M/2.12G [00:13<00:31, 49.4MB/s]
+Downloading:  32%|███▏      | 701M/2.12G [00:13<00:35, 43.0MB/s]
+Downloading:  33%|███▎      | 706M/2.12G [00:13<00:36, 42.2MB/s]
+Downloading:  33%|███▎      | 716M/2.12G [00:13<00:26, 57.4MB/s]
+Downloading:  33%|███▎      | 722M/2.12G [00:14<00:24, 60.8MB/s]
+Downloading:  34%|███▎      | 729M/2.12G [00:14<00:23, 63.2MB/s]
+Downloading:  34%|███▍      | 736M/2.12G [00:14<00:23, 63.2MB/s]
+Downloading:  34%|███▍      | 744M/2.12G [00:14<00:26, 56.5MB/s]
+Downloading:  35%|███▍      | 750M/2.12G [00:14<00:28, 52.3MB/s]
+Downloading:  35%|███▍      | 756M/2.12G [00:14<00:30, 49.0MB/s]
+Downloading:  35%|███▌      | 762M/2.12G [00:14<00:27, 54.5MB/s]
+Downloading:  35%|███▌      | 769M/2.12G [00:14<00:25, 58.5MB/s]
+Downloading:  36%|███▌      | 776M/2.12G [00:15<00:27, 53.9MB/s]
+Downloading:  36%|███▌      | 782M/2.12G [00:15<00:25, 56.2MB/s]
+Downloading:  36%|███▋      | 788M/2.12G [00:15<00:28, 50.4MB/s]
+Downloading:  37%|███▋      | 793M/2.12G [00:15<00:27, 52.1MB/s]
+Downloading:  37%|███▋      | 800M/2.12G [00:15<00:26, 54.8MB/s]
+Downloading:  37%|███▋      | 808M/2.12G [00:15<00:27, 52.2MB/s]
+Downloading:  38%|███▊      | 816M/2.12G [00:15<00:29, 47.7MB/s]
+Downloading:  38%|███▊      | 824M/2.12G [00:16<00:25, 54.4MB/s]
+Downloading:  38%|███▊      | 830M/2.12G [00:16<00:28, 49.1MB/s]
+Downloading:  38%|███▊      | 835M/2.12G [00:16<00:27, 50.6MB/s]
+Downloading:  39%|███▉      | 841M/2.12G [00:16<00:25, 53.8MB/s]
+Downloading:  39%|███▉      | 848M/2.12G [00:16<00:26, 52.9MB/s]
+Downloading:  39%|███▉      | 855M/2.12G [00:16<00:25, 53.7MB/s]
+Downloading:  40%|███▉      | 860M/2.12G [00:16<00:26, 50.9MB/s]
+Downloading:  40%|███▉      | 865M/2.12G [00:16<00:32, 41.7MB/s]
+Downloading:  40%|████      | 872M/2.12G [00:17<00:29, 46.7MB/s]
+Downloading:  40%|████      | 878M/2.12G [00:17<00:29, 46.3MB/s]
+Downloading:  41%|████      | 883M/2.12G [00:17<00:31, 42.6MB/s]
+Downloading:  41%|████      | 887M/2.12G [00:17<00:34, 39.2MB/s]
+Downloading:  41%|████      | 891M/2.12G [00:17<00:34, 38.9MB/s]
+Downloading:  41%|████▏     | 896M/2.12G [00:17<00:37, 35.7MB/s]
+Downloading:  42%|████▏     | 904M/2.12G [00:17<00:31, 42.4MB/s]
+Downloading:  42%|████▏     | 912M/2.12G [00:18<00:27, 48.6MB/s]
+Downloading:  42%|████▏     | 919M/2.12G [00:18<00:24, 54.4MB/s]
+Downloading:  43%|████▎     | 925M/2.12G [00:18<00:23, 56.3MB/s]
+Downloading:  43%|████▎     | 931M/2.12G [00:18<00:22, 57.3MB/s]
+Downloading:  43%|████▎     | 936M/2.12G [00:18<00:26, 49.1MB/s]
+Downloading:  43%|████▎     | 943M/2.12G [00:18<00:24, 51.8MB/s]
+Downloading:  44%|████▎     | 948M/2.12G [00:18<00:30, 41.6MB/s]
+Downloading:  44%|████▍     | 955M/2.12G [00:18<00:25, 49.9MB/s]
+Downloading:  44%|████▍     | 961M/2.12G [00:19<00:26, 47.1MB/s]
+Downloading:  45%|████▍     | 966M/2.12G [00:19<00:25, 50.4MB/s]
+Downloading:  45%|████▍     | 972M/2.12G [00:19<00:28, 44.8MB/s]
+Downloading:  45%|████▍     | 976M/2.12G [00:19<00:32, 39.0MB/s]
+Downloading:  45%|████▌     | 984M/2.12G [00:19<00:26, 46.9MB/s]
+Downloading:  46%|████▌     | 992M/2.12G [00:19<00:24, 49.9MB/s]
+Downloading:  46%|████▌     | 0.98G/2.12G [00:19<00:21, 57.2MB/s]
+Downloading:  46%|████▋     | 0.98G/2.12G [00:20<00:23, 50.9MB/s]
+Downloading:  47%|████▋     | 0.99G/2.12G [00:20<00:23, 52.5MB/s]
+Downloading:  47%|████▋     | 0.99G/2.12G [00:20<00:26, 46.0MB/s]
+Downloading:  47%|████▋     | 1.00G/2.12G [00:20<00:23, 51.0MB/s]
+Downloading:  48%|████▊     | 1.01G/2.12G [00:20<00:22, 53.8MB/s]
+Downloading:  48%|████▊     | 1.01G/2.12G [00:20<00:22, 53.0MB/s]
+Downloading:  48%|████▊     | 1.02G/2.12G [00:20<00:26, 44.3MB/s]
+Downloading:  48%|████▊     | 1.03G/2.12G [00:20<00:23, 50.9MB/s]
+Downloading:  49%|████▊     | 1.03G/2.12G [00:21<00:22, 51.8MB/s]
+Downloading:  49%|████▉     | 1.04G/2.12G [00:21<00:21, 54.8MB/s]
+Downloading:  49%|████▉     | 1.05G/2.12G [00:21<00:19, 57.7MB/s]
+Downloading:  50%|████▉     | 1.05G/2.12G [00:21<00:19, 58.7MB/s]
+Downloading:  50%|█████     | 1.06G/2.12G [00:21<00:17, 65.4MB/s]
+Downloading:  51%|█████     | 1.07G/2.12G [00:21<00:18, 61.6MB/s]
+Downloading:  51%|█████     | 1.08G/2.12G [00:21<00:17, 64.0MB/s]
+Downloading:  51%|█████     | 1.08G/2.12G [00:21<00:19, 58.0MB/s]
+Downloading:  51%|█████▏    | 1.09G/2.12G [00:22<00:18, 58.8MB/s]
+Downloading:  52%|█████▏    | 1.09G/2.12G [00:22<00:20, 54.2MB/s]
+Downloading:  52%|█████▏    | 1.10G/2.12G [00:22<00:17, 62.4MB/s]
+Downloading:  52%|█████▏    | 1.11G/2.12G [00:22<00:18, 59.2MB/s]
+Downloading:  53%|█████▎    | 1.11G/2.12G [00:22<00:19, 54.9MB/s]
+Downloading:  53%|█████▎    | 1.12G/2.12G [00:22<00:21, 50.5MB/s]
+Downloading:  53%|█████▎    | 1.12G/2.12G [00:22<00:22, 48.1MB/s]
+Downloading:  53%|█████▎    | 1.13G/2.12G [00:23<00:21, 48.5MB/s]
+Downloading:  54%|█████▎    | 1.14G/2.12G [00:23<00:21, 48.5MB/s]
+Downloading:  54%|█████▍    | 1.14G/2.12G [00:23<00:22, 45.6MB/s]
+Downloading:  54%|█████▍    | 1.15G/2.12G [00:23<00:22, 46.6MB/s]
+Downloading:  55%|█████▍    | 1.16G/2.12G [00:23<00:19, 54.3MB/s]
+Downloading:  55%|█████▍    | 1.16G/2.12G [00:23<00:20, 50.8MB/s]
+Downloading:  55%|█████▌    | 1.17G/2.12G [00:23<00:22, 44.7MB/s]
+Downloading:  55%|█████▌    | 1.17G/2.12G [00:23<00:22, 45.4MB/s]
+Downloading:  55%|█████▌    | 1.17G/2.12G [00:24<00:30, 33.0MB/s]
+Downloading:  56%|█████▌    | 1.18G/2.12G [00:24<00:35, 28.5MB/s]
+Downloading:  56%|█████▌    | 1.18G/2.12G [00:24<00:34, 29.0MB/s]
+Downloading:  56%|█████▌    | 1.19G/2.12G [00:24<00:33, 29.8MB/s]
+Downloading:  56%|█████▌    | 1.19G/2.12G [00:24<00:34, 28.8MB/s]
+Downloading:  56%|█████▋    | 1.20G/2.12G [00:24<00:28, 35.1MB/s]
+Downloading:  57%|█████▋    | 1.20G/2.12G [00:24<00:22, 43.6MB/s]
+Downloading:  57%|█████▋    | 1.21G/2.12G [00:25<00:19, 50.5MB/s]
+Downloading:  58%|█████▊    | 1.22G/2.12G [00:25<00:17, 54.8MB/s]
+Downloading:  58%|█████▊    | 1.23G/2.12G [00:25<00:17, 56.0MB/s]
+Downloading:  58%|█████▊    | 1.23G/2.12G [00:25<00:18, 51.5MB/s]
+Downloading:  59%|█████▊    | 1.24G/2.12G [00:25<00:15, 59.2MB/s]
+Downloading:  59%|█████▉    | 1.25G/2.12G [00:25<00:15, 60.1MB/s]
+Downloading:  59%|█████▉    | 1.26G/2.12G [00:25<00:14, 65.3MB/s]
+Downloading:  60%|█████▉    | 1.26G/2.12G [00:26<00:14, 62.3MB/s]
+Downloading:  60%|█████▉    | 1.27G/2.12G [00:26<00:15, 57.1MB/s]
+Downloading:  60%|██████    | 1.28G/2.12G [00:26<00:15, 56.9MB/s]
+Downloading:  60%|██████    | 1.28G/2.12G [00:26<00:15, 57.2MB/s]
+Downloading:  61%|██████    | 1.29G/2.12G [00:26<00:15, 57.3MB/s]
+Downloading:  61%|██████    | 1.30G/2.12G [00:26<00:14, 59.3MB/s]
+Downloading:  61%|██████▏   | 1.30G/2.12G [00:26<00:16, 52.6MB/s]
+Downloading:  62%|██████▏   | 1.31G/2.12G [00:26<00:17, 50.5MB/s]
+Downloading:  62%|██████▏   | 1.31G/2.12G [00:26<00:13, 62.4MB/s]
+Downloading:  62%|██████▏   | 1.32G/2.12G [00:27<00:17, 48.5MB/s]
+Downloading:  63%|██████▎   | 1.33G/2.12G [00:27<00:16, 50.0MB/s]
+Downloading:  63%|██████▎   | 1.33G/2.12G [00:27<00:16, 50.5MB/s]
+Downloading:  63%|██████▎   | 1.34G/2.12G [00:27<00:17, 49.3MB/s]
+Downloading:  64%|██████▎   | 1.35G/2.12G [00:27<00:14, 57.5MB/s]
+Downloading:  64%|██████▍   | 1.35G/2.12G [00:27<00:13, 59.5MB/s]
+Downloading:  64%|██████▍   | 1.36G/2.12G [00:27<00:13, 59.2MB/s]
+Downloading:  64%|██████▍   | 1.36G/2.12G [00:28<00:15, 53.4MB/s]
+Downloading:  65%|██████▍   | 1.37G/2.12G [00:28<00:17, 46.7MB/s]
+Downloading:  65%|██████▍   | 1.37G/2.12G [00:28<00:16, 48.4MB/s]
+Downloading:  65%|██████▌   | 1.38G/2.12G [00:28<00:14, 56.0MB/s]
+Downloading:  66%|██████▌   | 1.39G/2.12G [00:28<00:12, 61.4MB/s]
+Downloading:  66%|██████▌   | 1.40G/2.12G [00:28<00:13, 57.8MB/s]
+Downloading:  66%|██████▌   | 1.40G/2.12G [00:28<00:13, 57.3MB/s]
+Downloading:  66%|██████▋   | 1.41G/2.12G [00:28<00:14, 52.3MB/s]
+Downloading:  67%|██████▋   | 1.41G/2.12G [00:29<00:18, 40.4MB/s]
+Downloading:  67%|██████▋   | 1.42G/2.12G [00:29<00:18, 41.0MB/s]
+Downloading:  67%|██████▋   | 1.42G/2.12G [00:29<00:16, 45.8MB/s]
+Downloading:  67%|██████▋   | 1.43G/2.12G [00:29<00:15, 46.4MB/s]
+Downloading:  68%|██████▊   | 1.43G/2.12G [00:29<00:15, 47.4MB/s]
+Downloading:  68%|██████▊   | 1.44G/2.12G [00:29<00:14, 49.5MB/s]
+Downloading:  68%|██████▊   | 1.44G/2.12G [00:29<00:15, 46.8MB/s]
+Downloading:  68%|██████▊   | 1.45G/2.12G [00:29<00:18, 39.4MB/s]
+Downloading:  69%|██████▊   | 1.45G/2.12G [00:30<00:15, 47.1MB/s]
+Downloading:  69%|██████▉   | 1.46G/2.12G [00:30<00:15, 46.0MB/s]
+Downloading:  69%|██████▉   | 1.47G/2.12G [00:30<00:14, 47.8MB/s]
+Downloading:  69%|██████▉   | 1.47G/2.12G [00:30<00:15, 46.0MB/s]
+Downloading:  70%|██████▉   | 1.48G/2.12G [00:30<00:15, 45.3MB/s]
+Downloading:  70%|███████   | 1.49G/2.12G [00:30<00:11, 57.5MB/s]
+Downloading:  70%|███████   | 1.49G/2.12G [00:30<00:11, 60.1MB/s]
+Downloading:  71%|███████   | 1.50G/2.12G [00:30<00:11, 59.7MB/s]
+Downloading:  71%|███████   | 1.51G/2.12G [00:31<00:10, 63.2MB/s]
+Downloading:  71%|███████▏  | 1.51G/2.12G [00:31<00:10, 62.0MB/s]
+Downloading:  72%|███████▏  | 1.52G/2.12G [00:31<00:10, 60.7MB/s]
+Downloading:  72%|███████▏  | 1.52G/2.12G [00:31<00:13, 47.6MB/s]
+Downloading:  72%|███████▏  | 1.53G/2.12G [00:31<00:14, 45.1MB/s]
+Downloading:  72%|███████▏  | 1.53G/2.12G [00:31<00:13, 47.9MB/s]
+Downloading:  73%|███████▎  | 1.54G/2.12G [00:31<00:16, 38.8MB/s]
+Downloading:  73%|███████▎  | 1.55G/2.12G [00:31<00:12, 48.4MB/s]
+Downloading:  73%|███████▎  | 1.55G/2.12G [00:32<00:12, 49.2MB/s]
+Downloading:  74%|███████▎  | 1.56G/2.12G [00:32<00:13, 45.7MB/s]
+Downloading:  74%|███████▎  | 1.56G/2.12G [00:32<00:13, 43.0MB/s]
+Downloading:  74%|███████▍  | 1.57G/2.12G [00:32<00:14, 42.3MB/s]
+Downloading:  74%|███████▍  | 1.57G/2.12G [00:32<00:15, 38.8MB/s]
+Downloading:  74%|███████▍  | 1.58G/2.12G [00:32<00:12, 47.9MB/s]
+Downloading:  75%|███████▍  | 1.59G/2.12G [00:32<00:10, 52.9MB/s]
+Downloading:  75%|███████▌  | 1.59G/2.12G [00:32<00:09, 59.5MB/s]
+Downloading:  76%|███████▌  | 1.60G/2.12G [00:33<00:09, 61.2MB/s]
+Downloading:  76%|███████▌  | 1.61G/2.12G [00:33<00:09, 57.4MB/s]
+Downloading:  76%|███████▋  | 1.62G/2.12G [00:33<00:09, 57.7MB/s]
+Downloading:  77%|███████▋  | 1.62G/2.12G [00:33<00:09, 54.9MB/s]
+Downloading:  77%|███████▋  | 1.63G/2.12G [00:33<00:09, 55.0MB/s]
+Downloading:  77%|███████▋  | 1.64G/2.12G [00:33<00:09, 55.3MB/s]
+Downloading:  78%|███████▊  | 1.64G/2.12G [00:34<00:10, 49.0MB/s]
+Downloading:  78%|███████▊  | 1.65G/2.12G [00:34<00:10, 50.1MB/s]
+Downloading:  78%|███████▊  | 1.66G/2.12G [00:34<00:10, 47.0MB/s]
+Downloading:  79%|███████▊  | 1.66G/2.12G [00:34<00:09, 51.8MB/s]
+Downloading:  79%|███████▉  | 1.67G/2.12G [00:34<00:08, 57.8MB/s]
+Downloading:  79%|███████▉  | 1.68G/2.12G [00:34<00:07, 59.4MB/s]
+Downloading:  79%|███████▉  | 1.68G/2.12G [00:34<00:08, 58.3MB/s]
+Downloading:  80%|███████▉  | 1.69G/2.12G [00:35<00:11, 40.8MB/s]
+Downloading:  80%|████████  | 1.70G/2.12G [00:35<00:09, 48.2MB/s]
+Downloading:  80%|████████  | 1.70G/2.12G [00:35<00:09, 48.5MB/s]
+Downloading:  81%|████████  | 1.71G/2.12G [00:35<00:08, 51.7MB/s]
+Downloading:  81%|████████  | 1.71G/2.12G [00:35<00:08, 48.9MB/s]
+Downloading:  81%|████████  | 1.72G/2.12G [00:35<00:09, 46.6MB/s]
+Downloading:  82%|████████▏ | 1.73G/2.12G [00:35<00:07, 57.6MB/s]
+Downloading:  82%|████████▏ | 1.73G/2.12G [00:35<00:07, 56.1MB/s]
+Downloading:  82%|████████▏ | 1.74G/2.12G [00:36<00:08, 50.6MB/s]
+Downloading:  82%|████████▏ | 1.74G/2.12G [00:36<00:08, 49.0MB/s]
+Downloading:  83%|████████▎ | 1.75G/2.12G [00:36<00:06, 58.2MB/s]
+Downloading:  83%|████████▎ | 1.76G/2.12G [00:36<00:06, 61.5MB/s]
+Downloading:  83%|████████▎ | 1.77G/2.12G [00:36<00:06, 60.4MB/s]
+Downloading:  84%|████████▎ | 1.77G/2.12G [00:36<00:06, 59.2MB/s]
+Downloading:  84%|████████▍ | 1.78G/2.12G [00:36<00:05, 70.1MB/s]
+Downloading:  84%|████████▍ | 1.79G/2.12G [00:36<00:05, 64.3MB/s]
+Downloading:  85%|████████▍ | 1.80G/2.12G [00:36<00:05, 65.5MB/s]
+Downloading:  85%|████████▌ | 1.80G/2.12G [00:37<00:05, 57.6MB/s]
+Downloading:  85%|████████▌ | 1.81G/2.12G [00:37<00:05, 65.1MB/s]
+Downloading:  86%|████████▌ | 1.82G/2.12G [00:37<00:07, 42.2MB/s]
+Downloading:  86%|████████▌ | 1.82G/2.12G [00:37<00:07, 45.2MB/s]
+Downloading:  86%|████████▋ | 1.83G/2.12G [00:37<00:06, 46.4MB/s]
+Downloading:  87%|████████▋ | 1.84G/2.12G [00:37<00:05, 54.0MB/s]
+Downloading:  87%|████████▋ | 1.84G/2.12G [00:37<00:05, 51.5MB/s]
+Downloading:  87%|████████▋ | 1.85G/2.12G [00:38<00:06, 46.4MB/s]
+Downloading:  87%|████████▋ | 1.85G/2.12G [00:38<00:06, 46.3MB/s]
+Downloading:  88%|████████▊ | 1.86G/2.12G [00:38<00:05, 49.2MB/s]
+Downloading:  88%|████████▊ | 1.87G/2.12G [00:38<00:05, 48.5MB/s]
+Downloading:  88%|████████▊ | 1.87G/2.12G [00:38<00:04, 54.4MB/s]
+Downloading:  89%|████████▉ | 1.88G/2.12G [00:38<00:04, 58.3MB/s]
+Downloading:  89%|████████▉ | 1.89G/2.12G [00:38<00:04, 57.3MB/s]
+Downloading:  89%|████████▉ | 1.90G/2.12G [00:39<00:04, 55.2MB/s]
+Downloading:  90%|████████▉ | 1.90G/2.12G [00:39<00:04, 47.2MB/s]
+Downloading:  90%|████████▉ | 1.91G/2.12G [00:39<00:05, 44.3MB/s]
+Downloading:  90%|█████████ | 1.91G/2.12G [00:39<00:05, 43.9MB/s]
+Downloading:  90%|█████████ | 1.92G/2.12G [00:39<00:04, 46.0MB/s]
+Downloading:  91%|█████████ | 1.92G/2.12G [00:39<00:04, 52.1MB/s]
+Downloading:  91%|█████████ | 1.93G/2.12G [00:39<00:04, 46.7MB/s]
+Downloading:  91%|█████████ | 1.93G/2.12G [00:40<00:04, 40.3MB/s]
+Downloading:  91%|█████████▏| 1.94G/2.12G [00:40<00:04, 43.9MB/s]
+Downloading:  92%|█████████▏| 1.95G/2.12G [00:40<00:03, 52.3MB/s]
+Downloading:  92%|█████████▏| 1.95G/2.12G [00:40<00:03, 46.1MB/s]
+Downloading:  92%|█████████▏| 1.95G/2.12G [00:40<00:04, 42.3MB/s]
+Downloading:  92%|█████████▏| 1.96G/2.12G [00:40<00:04, 37.1MB/s]
+Downloading:  93%|█████████▎| 1.96G/2.12G [00:40<00:04, 40.0MB/s]
+Downloading:  93%|█████████▎| 1.97G/2.12G [00:41<00:04, 32.4MB/s]
+Downloading:  93%|█████████▎| 1.97G/2.12G [00:41<00:04, 33.9MB/s]
+Downloading:  93%|█████████▎| 1.98G/2.12G [00:41<00:04, 35.0MB/s]
+Downloading:  93%|█████████▎| 1.98G/2.12G [00:41<00:04, 33.2MB/s]
+Downloading:  94%|█████████▎| 1.98G/2.12G [00:41<00:03, 38.1MB/s]
+Downloading:  94%|█████████▍| 1.99G/2.12G [00:41<00:02, 49.3MB/s]
+Downloading:  94%|█████████▍| 2.00G/2.12G [00:41<00:02, 44.3MB/s]
+Downloading:  95%|█████████▍| 2.00G/2.12G [00:41<00:02, 49.9MB/s]
+Downloading:  95%|█████████▍| 2.01G/2.12G [00:41<00:02, 46.2MB/s]
+Downloading:  95%|█████████▌| 2.02G/2.12G [00:42<00:02, 46.1MB/s]
+Downloading:  96%|█████████▌| 2.02G/2.12G [00:42<00:01, 56.9MB/s]
+Downloading:  96%|█████████▌| 2.03G/2.12G [00:42<00:01, 54.0MB/s]
+Downloading:  96%|█████████▌| 2.04G/2.12G [00:42<00:01, 60.4MB/s]
+Downloading:  96%|█████████▋| 2.04G/2.12G [00:42<00:01, 58.2MB/s]
+Downloading:  97%|█████████▋| 2.05G/2.12G [00:42<00:01, 47.6MB/s]
+Downloading:  97%|█████████▋| 2.06G/2.12G [00:42<00:01, 47.8MB/s]
+Downloading:  97%|█████████▋| 2.06G/2.12G [00:43<00:01, 50.6MB/s]
+Downloading:  98%|█████████▊| 2.07G/2.12G [00:43<00:01, 50.5MB/s]
+Downloading:  98%|█████████▊| 2.07G/2.12G [00:43<00:01, 44.8MB/s]
+Downloading:  98%|█████████▊| 2.08G/2.12G [00:43<00:00, 48.5MB/s]
+Downloading:  98%|█████████▊| 2.09G/2.12G [00:43<00:00, 51.7MB/s]
+Downloading:  99%|█████████▊| 2.09G/2.12G [00:43<00:00, 46.8MB/s]
+Downloading:  99%|█████████▉| 2.10G/2.12G [00:43<00:00, 40.4MB/s]
+Downloading:  99%|█████████▉| 2.10G/2.12G [00:44<00:00, 44.2MB/s]
+Downloading:  99%|█████████▉| 2.11G/2.12G [00:44<00:00, 38.5MB/s]
+Downloading: 100%|█████████▉| 2.11G/2.12G [00:44<00:00, 37.2MB/s]
+Downloading: 100%|██████████| 2.12G/2.12G [00:44<00:00, 51.2MB/s]
+2022-06-05 12:14:00,286 - __main__ - INFO - STARTING TRAININGGGGGG
+Downloading:   0%|          | 0.00/88.0 [00:00<?, ?B/s]
+Downloading: 100%|██████████| 88.0/88.0 [00:00<00:00, 84.9kB/s]
+Downloading:   0%|          | 0.00/1.82M [00:00<?, ?B/s]
+Downloading: 100%|██████████| 1.82M/1.82M [00:00<00:00, 65.2MB/s]
+Downloading:   0%|          | 0.00/65.0 [00:00<?, ?B/s]
+Downloading: 100%|██████████| 65.0/65.0 [00:00<00:00, 93.4kB/s]
+Using amp fp16 backend
+Using amp fp16 backend
+***** Running training *****
+***** Running training *****
+  Num examples = 35
+Num examples = 35
+  Num Epochs = 20
+  Instantaneous batch size per device = 1
+Total train batch size (w. parallel, distributed & accumulation) = 32
+  Gradient Accumulation steps = 32
+  Total optimization steps = 20
+Num Epochs = 20
+  Instantaneous batch size per device = 1
+  Total train batch size (w. parallel, distributed & accumulation) = 32
+  Gradient Accumulation steps = 32
+  Total optimization steps = 20
+0%|          | 0/20 [00:00<?, ?it/s]
+[2022-06-05 12:14:01.552 algo-1:32 INFO utils.py:27] RULE_JOB_STOP_SIGNAL_FILENAME: None
+[2022-06-05 12:14:01.610 algo-1:32 INFO profiler_config_parser.py:102] User has disabled profiler.
+[2022-06-05 12:14:01.610 algo-1:32 INFO json_config.py:91] Creating hook from json_config at /opt/ml/input/config/debughookconfig.json.
+[2022-06-05 12:14:01.610 algo-1:32 INFO hook.py:200] tensorboard_dir has not been set for the hook. SMDebug will not be exporting tensorboard summaries.
+[2022-06-05 12:14:01.611 algo-1:32 INFO hook.py:255] Saving to /opt/ml/output/tensors
+[2022-06-05 12:14:01.611 algo-1:32 INFO state_store.py:77] The checkpoint config file /opt/ml/input/config/checkpointconfig.json does not exist.
+[2022-06-05 12:14:01.733 algo-1:32 INFO hook.py:591] name:model.shared.weight count_params:98409472
+[2022-06-05 12:14:01.733 algo-1:32 INFO hook.py:591] name:model.encoder.layers.0.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.733 algo-1:32 INFO hook.py:591] name:model.encoder.layers.0.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.733 algo-1:32 INFO hook.py:591] name:model.encoder.layers.0.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.733 algo-1:32 INFO hook.py:591] name:model.encoder.layers.0.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.733 algo-1:32 INFO hook.py:591] name:model.encoder.layers.0.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.733 algo-1:32 INFO hook.py:591] name:model.encoder.layers.0.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.733 algo-1:32 INFO hook.py:591] name:model.encoder.layers.0.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.733 algo-1:32 INFO hook.py:591] name:model.encoder.layers.0.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.733 algo-1:32 INFO hook.py:591] name:model.encoder.layers.0.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.733 algo-1:32 INFO hook.py:591] name:model.encoder.layers.0.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.733 algo-1:32 INFO hook.py:591] name:model.encoder.layers.0.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.733 algo-1:32 INFO hook.py:591] name:model.encoder.layers.0.fc1.bias count_params:4096
+[2022-06-05 12:14:01.733 algo-1:32 INFO hook.py:591] name:model.encoder.layers.0.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.0.fc2.bias count_params:1024
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.0.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.0.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.1.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.1.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.1.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.1.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.1.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.1.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.1.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.1.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.1.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.1.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.1.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.1.fc1.bias count_params:4096
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.1.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.1.fc2.bias count_params:1024
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.1.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.1.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.2.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.2.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.2.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.2.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.2.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.2.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.2.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.2.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.2.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.2.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.2.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.2.fc1.bias count_params:4096
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.2.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.2.fc2.bias count_params:1024
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.2.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.2.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.3.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.3.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.3.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.3.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.3.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.3.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.734 algo-1:32 INFO hook.py:591] name:model.encoder.layers.3.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.3.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.3.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.3.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.3.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.3.fc1.bias count_params:4096
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.3.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.3.fc2.bias count_params:1024
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.3.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.3.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.4.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.4.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.4.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.4.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.4.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.4.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.4.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.4.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.4.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.4.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.4.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.4.fc1.bias count_params:4096
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.4.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.4.fc2.bias count_params:1024
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.4.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.4.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.5.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.5.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.5.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.5.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.5.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.5.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.5.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.5.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.5.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.5.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.5.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.5.fc1.bias count_params:4096
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.5.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.5.fc2.bias count_params:1024
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.5.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.5.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.735 algo-1:32 INFO hook.py:591] name:model.encoder.layers.6.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.6.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.6.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.6.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.6.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.6.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.6.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.6.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.6.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.6.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.6.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.6.fc1.bias count_params:4096
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.6.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.6.fc2.bias count_params:1024
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.6.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.6.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.7.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.7.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.7.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.7.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.7.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.7.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.7.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.7.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.7.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.7.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.7.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.7.fc1.bias count_params:4096
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.7.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.7.fc2.bias count_params:1024
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.7.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.7.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.8.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.8.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.8.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.8.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.8.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.8.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.8.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.8.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.8.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.8.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.8.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.736 algo-1:32 INFO hook.py:591] name:model.encoder.layers.8.fc1.bias count_params:4096
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.8.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.8.fc2.bias count_params:1024
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.8.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.8.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.9.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.9.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.9.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.9.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.9.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.9.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.9.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.9.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.9.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.9.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.9.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.9.fc1.bias count_params:4096
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.9.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.9.fc2.bias count_params:1024
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.9.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.9.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.10.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.10.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.10.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.10.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.10.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.10.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.10.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.10.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.10.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.10.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.10.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.10.fc1.bias count_params:4096
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.10.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.10.fc2.bias count_params:1024
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.10.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.10.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.11.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.11.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.11.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.11.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.11.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.11.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.11.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.737 algo-1:32 INFO hook.py:591] name:model.encoder.layers.11.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.11.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.11.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.11.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.11.fc1.bias count_params:4096
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.11.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.11.fc2.bias count_params:1024
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.11.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.11.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.12.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.12.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.12.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.12.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.12.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.12.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.12.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.12.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.12.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.12.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.12.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.12.fc1.bias count_params:4096
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.12.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.12.fc2.bias count_params:1024
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.12.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.12.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.13.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.13.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.13.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.13.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.13.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.13.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.13.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.13.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.13.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.13.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.13.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.13.fc1.bias count_params:4096
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.13.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.13.fc2.bias count_params:1024
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.13.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.13.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.14.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.14.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.738 algo-1:32 INFO hook.py:591] name:model.encoder.layers.14.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.14.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.14.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.14.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.14.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.14.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.14.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.14.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.14.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.14.fc1.bias count_params:4096
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.14.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.14.fc2.bias count_params:1024
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.14.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.14.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.15.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.15.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.15.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.15.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.15.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.15.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.15.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.15.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.15.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.15.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.15.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.15.fc1.bias count_params:4096
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.15.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.15.fc2.bias count_params:1024
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.15.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layers.15.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.encoder.layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.decoder.layers.0.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.decoder.layers.0.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.decoder.layers.0.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.decoder.layers.0.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.decoder.layers.0.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.decoder.layers.0.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.decoder.layers.0.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.decoder.layers.0.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.decoder.layers.0.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.decoder.layers.0.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.739 algo-1:32 INFO hook.py:591] name:model.decoder.layers.0.encoder_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.0.encoder_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.0.encoder_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.0.encoder_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.0.encoder_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.0.encoder_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.0.encoder_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.0.encoder_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.0.encoder_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.0.encoder_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.0.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.0.fc1.bias count_params:4096
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.0.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.0.fc2.bias count_params:1024
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.0.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.0.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.1.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.1.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.1.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.1.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.1.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.1.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.1.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.1.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.1.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.1.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.1.encoder_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.1.encoder_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.1.encoder_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.1.encoder_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.1.encoder_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.1.encoder_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.1.encoder_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.1.encoder_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.1.encoder_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.1.encoder_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.1.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.1.fc1.bias count_params:4096
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.1.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.1.fc2.bias count_params:1024
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.1.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.1.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.740 algo-1:32 INFO hook.py:591] name:model.decoder.layers.2.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.2.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.2.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.2.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.2.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.2.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.2.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.2.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.2.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.2.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.2.encoder_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.2.encoder_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.2.encoder_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.2.encoder_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.2.encoder_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.2.encoder_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.2.encoder_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.2.encoder_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.2.encoder_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.2.encoder_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.2.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.2.fc1.bias count_params:4096
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.2.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.2.fc2.bias count_params:1024
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.2.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.2.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.3.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.3.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.3.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.3.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.3.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.3.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.3.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.3.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.3.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.3.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.3.encoder_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.3.encoder_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.3.encoder_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.3.encoder_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.3.encoder_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.3.encoder_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.3.encoder_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.3.encoder_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.3.encoder_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.741 algo-1:32 INFO hook.py:591] name:model.decoder.layers.3.encoder_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.3.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.3.fc1.bias count_params:4096
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.3.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.3.fc2.bias count_params:1024
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.3.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.3.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.4.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.4.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.4.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.4.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.4.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.4.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.4.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.4.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.4.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.4.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.4.encoder_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.4.encoder_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.4.encoder_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.4.encoder_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.4.encoder_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.4.encoder_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.4.encoder_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.4.encoder_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.4.encoder_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.4.encoder_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.4.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.4.fc1.bias count_params:4096
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.4.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.4.fc2.bias count_params:1024
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.4.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.4.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.5.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.5.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.5.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.5.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.5.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.5.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.5.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.5.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.5.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.5.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.742 algo-1:32 INFO hook.py:591] name:model.decoder.layers.5.encoder_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.5.encoder_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.5.encoder_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.5.encoder_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.5.encoder_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.5.encoder_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.5.encoder_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.5.encoder_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.5.encoder_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.5.encoder_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.5.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.5.fc1.bias count_params:4096
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.5.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.5.fc2.bias count_params:1024
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.5.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.5.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.6.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.6.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.6.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.6.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.6.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.6.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.6.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.6.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.6.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.6.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.6.encoder_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.6.encoder_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.6.encoder_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.6.encoder_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.6.encoder_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.6.encoder_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.6.encoder_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.6.encoder_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.6.encoder_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.6.encoder_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.6.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.6.fc1.bias count_params:4096
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.6.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.6.fc2.bias count_params:1024
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.6.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.6.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.7.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.743 algo-1:32 INFO hook.py:591] name:model.decoder.layers.7.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.7.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.7.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.7.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.7.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.7.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.7.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.7.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.7.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.7.encoder_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.7.encoder_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.7.encoder_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.7.encoder_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.7.encoder_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.7.encoder_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.7.encoder_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.7.encoder_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.7.encoder_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.7.encoder_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.7.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.7.fc1.bias count_params:4096
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.7.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.7.fc2.bias count_params:1024
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.7.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.7.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.8.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.8.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.8.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.8.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.8.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.8.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.8.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.8.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.8.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.8.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.8.encoder_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.8.encoder_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.8.encoder_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.8.encoder_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.8.encoder_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.8.encoder_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.8.encoder_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.744 algo-1:32 INFO hook.py:591] name:model.decoder.layers.8.encoder_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.8.encoder_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.8.encoder_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.8.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.8.fc1.bias count_params:4096
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.8.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.8.fc2.bias count_params:1024
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.8.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.8.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.9.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.9.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.9.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.9.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.9.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.9.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.9.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.9.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.9.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.9.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.9.encoder_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.9.encoder_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.9.encoder_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.9.encoder_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.9.encoder_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.9.encoder_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.9.encoder_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.9.encoder_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.9.encoder_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.9.encoder_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.9.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.9.fc1.bias count_params:4096
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.9.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.9.fc2.bias count_params:1024
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.9.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.9.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.10.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.10.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.10.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.10.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.10.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.10.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.10.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.10.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.10.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.745 algo-1:32 INFO hook.py:591] name:model.decoder.layers.10.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.10.encoder_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.10.encoder_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.10.encoder_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.10.encoder_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.10.encoder_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.10.encoder_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.10.encoder_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.10.encoder_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.10.encoder_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.10.encoder_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.10.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.10.fc1.bias count_params:4096
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.10.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.10.fc2.bias count_params:1024
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.10.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.10.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.11.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.11.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.11.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.11.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.11.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.11.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.11.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.11.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.11.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.11.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.11.encoder_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.11.encoder_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.11.encoder_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.11.encoder_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.11.encoder_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.11.encoder_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.11.encoder_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.11.encoder_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.11.encoder_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.11.encoder_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.11.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.11.fc1.bias count_params:4096
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.11.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.11.fc2.bias count_params:1024
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.11.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.11.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.746 algo-1:32 INFO hook.py:591] name:model.decoder.layers.12.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.12.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.12.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.12.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.12.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.12.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.12.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.12.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.12.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.12.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.12.encoder_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.12.encoder_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.12.encoder_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.12.encoder_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.12.encoder_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.12.encoder_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.12.encoder_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.12.encoder_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.12.encoder_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.12.encoder_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.12.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.12.fc1.bias count_params:4096
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.12.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.12.fc2.bias count_params:1024
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.12.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.12.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.13.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.13.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.13.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.13.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.13.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.13.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.13.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.13.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.13.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.13.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.13.encoder_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.13.encoder_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.13.encoder_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.13.encoder_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.13.encoder_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.13.encoder_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.13.encoder_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.747 algo-1:32 INFO hook.py:591] name:model.decoder.layers.13.encoder_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.13.encoder_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.13.encoder_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.13.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.13.fc1.bias count_params:4096
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.13.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.13.fc2.bias count_params:1024
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.13.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.13.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.14.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.14.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.14.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.14.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.14.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.14.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.14.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.14.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.14.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.14.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.14.encoder_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.14.encoder_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.14.encoder_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.14.encoder_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.14.encoder_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.14.encoder_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.14.encoder_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.14.encoder_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.14.encoder_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.14.encoder_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.14.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.14.fc1.bias count_params:4096
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.14.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.14.fc2.bias count_params:1024
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.14.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.14.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.15.self_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.15.self_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.15.self_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.15.self_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.15.self_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.15.self_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.15.self_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.15.self_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.748 algo-1:32 INFO hook.py:591] name:model.decoder.layers.15.self_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.749 algo-1:32 INFO hook.py:591] name:model.decoder.layers.15.self_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.749 algo-1:32 INFO hook.py:591] name:model.decoder.layers.15.encoder_attn.k_proj.weight count_params:1048576
+[2022-06-05 12:14:01.749 algo-1:32 INFO hook.py:591] name:model.decoder.layers.15.encoder_attn.k_proj.bias count_params:1024
+[2022-06-05 12:14:01.749 algo-1:32 INFO hook.py:591] name:model.decoder.layers.15.encoder_attn.v_proj.weight count_params:1048576
+[2022-06-05 12:14:01.749 algo-1:32 INFO hook.py:591] name:model.decoder.layers.15.encoder_attn.v_proj.bias count_params:1024
+[2022-06-05 12:14:01.749 algo-1:32 INFO hook.py:591] name:model.decoder.layers.15.encoder_attn.q_proj.weight count_params:1048576
+[2022-06-05 12:14:01.749 algo-1:32 INFO hook.py:591] name:model.decoder.layers.15.encoder_attn.q_proj.bias count_params:1024
+[2022-06-05 12:14:01.749 algo-1:32 INFO hook.py:591] name:model.decoder.layers.15.encoder_attn.out_proj.weight count_params:1048576
+[2022-06-05 12:14:01.749 algo-1:32 INFO hook.py:591] name:model.decoder.layers.15.encoder_attn.out_proj.bias count_params:1024
+[2022-06-05 12:14:01.749 algo-1:32 INFO hook.py:591] name:model.decoder.layers.15.encoder_attn_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.749 algo-1:32 INFO hook.py:591] name:model.decoder.layers.15.encoder_attn_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.749 algo-1:32 INFO hook.py:591] name:model.decoder.layers.15.fc1.weight count_params:4194304
+[2022-06-05 12:14:01.749 algo-1:32 INFO hook.py:591] name:model.decoder.layers.15.fc1.bias count_params:4096
+[2022-06-05 12:14:01.749 algo-1:32 INFO hook.py:591] name:model.decoder.layers.15.fc2.weight count_params:4194304
+[2022-06-05 12:14:01.749 algo-1:32 INFO hook.py:591] name:model.decoder.layers.15.fc2.bias count_params:1024
+[2022-06-05 12:14:01.749 algo-1:32 INFO hook.py:591] name:model.decoder.layers.15.final_layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.749 algo-1:32 INFO hook.py:591] name:model.decoder.layers.15.final_layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.749 algo-1:32 INFO hook.py:591] name:model.decoder.layer_norm.weight count_params:1024
+[2022-06-05 12:14:01.749 algo-1:32 INFO hook.py:591] name:model.decoder.layer_norm.bias count_params:1024
+[2022-06-05 12:14:01.749 algo-1:32 INFO hook.py:593] Total Trainable Params: 568699904
+[2022-06-05 12:14:01.749 algo-1:32 INFO hook.py:424] Monitoring the collections: losses
+[2022-06-05 12:14:01.750 algo-1:32 INFO hook.py:488] Hook is writing from the hook with pid: 32
+/opt/conda/lib/python3.8/site-packages/transformers/trainer.py:1355: FutureWarning: Non-finite norm encountered in torch.nn.utils.clip_grad_norm_; continuing anyway. Note that the default behavior will change in a future release to error out if a non-finite total norm is encountered. At that point, setting error_if_nonfinite=false will be required to retain the old behavior.
+  nn.utils.clip_grad_norm_(
+5%|▌         | 1/20 [00:06<02:12,  6.99s/it]
+{'loss': 10.7895, 'learning_rate': 0.0, 'epoch': 0.91}
+5%|▌         | 1/20 [00:07<02:12,  6.99s/it]
+***** Running Evaluation *****
+***** Running Evaluation *****
+Num examples = 18
+  Batch size = 1
+Num examples = 18
+  Batch size = 1
+0%|          | 0/18 [00:00<?, ?it/s]#033[A
+17%|█▋        | 3/18 [00:00<00:00, 23.23it/s]#033[A
+33%|███▎      | 6/18 [00:00<00:00, 17.94it/s]#033[A
+44%|████▍     | 8/18 [00:00<00:00, 16.97it/s]#033[A
+56%|█████▌    | 10/18 [00:00<00:00, 16.45it/s]#033[A
+67%|██████▋   | 12/18 [00:00<00:00, 16.07it/s]#033[A
+78%|███████▊  | 14/18 [00:00<00:00, 15.87it/s]#033[A
+89%|████████▉ | 16/18 [00:00<00:00, 15.73it/s]#033[A
+100%|██████████| 18/18 [00:01<00:00, 15.65it/s]#033[A
+#033[A
+{'eval_loss': 12.064590454101562, 'eval_runtime': 1.1703, 'eval_samples_per_second': 15.381, 'eval_steps_per_second': 15.381, 'epoch': 0.91}
+5%|▌         | 1/20 [00:08<02:12,  6.99s/it]
+100%|██████████| 18/18 [00:01<00:00, 15.65it/s]#033[A
+#033[A
+Saving model checkpoint to ./neuroscience-to-dev-bio-translation/checkpoint-1
+Saving model checkpoint to ./neuroscience-to-dev-bio-translation/checkpoint-1
+Configuration saved in ./neuroscience-to-dev-bio-translation/checkpoint-1/config.json
+Configuration saved in ./neuroscience-to-dev-bio-translation/checkpoint-1/config.json
+Model weights saved in ./neuroscience-to-dev-bio-translation/checkpoint-1/pytorch_model.bin
+Model weights saved in ./neuroscience-to-dev-bio-translation/checkpoint-1/pytorch_model.bin
+tokenizer config file saved in ./neuroscience-to-dev-bio-translation/checkpoint-1/tokenizer_config.json
+tokenizer config file saved in ./neuroscience-to-dev-bio-translation/checkpoint-1/tokenizer_config.json
+Special tokens file saved in ./neuroscience-to-dev-bio-translation/checkpoint-1/special_tokens_map.json
+Special tokens file saved in ./neuroscience-to-dev-bio-translation/checkpoint-1/special_tokens_map.json
+10%|█         | 2/20 [00:17<02:45,  9.18s/it]
+{'loss': 10.7807, 'learning_rate': 1e-06, 'epoch': 1.91}
+10%|█         | 2/20 [00:18<02:45,  9.18s/it]
+***** Running Evaluation *****
+***** Running Evaluation *****
+Num examples = 18
+  Batch size = 1
+Num examples = 18
+  Batch size = 1
+0%|          | 0/18 [00:00<?, ?it/s]#033[A
+17%|█▋        | 3/18 [00:00<00:00, 22.99it/s]#033[A
+33%|███▎      | 6/18 [00:00<00:00, 17.73it/s]#033[A
+44%|████▍     | 8/18 [00:00<00:00, 16.79it/s]#033[A
+56%|█████▌    | 10/18 [00:00<00:00, 16.25it/s]#033[A
+67%|██████▋   | 12/18 [00:00<00:00, 15.94it/s]#033[A
+78%|███████▊  | 14/18 [00:00<00:00, 15.74it/s]#033[A
+89%|████████▉ | 16/18 [00:00<00:00, 15.60it/s]#033[A
+100%|██████████| 18/18 [00:01<00:00, 15.51it/s]#033[A
+#033[A
+{'eval_loss': 12.064590454101562, 'eval_runtime': 1.1785, 'eval_samples_per_second': 15.274, 'eval_steps_per_second': 15.274, 'epoch': 1.91}
+10%|█         | 2/20 [00:19<02:45,  9.18s/it]
+100%|██████████| 18/18 [00:01<00:00, 15.51it/s]#033[A
+#033[A
+Saving model checkpoint to ./neuroscience-to-dev-bio-translation/checkpoint-2
+Saving model checkpoint to ./neuroscience-to-dev-bio-translation/checkpoint-2
+Configuration saved in ./neuroscience-to-dev-bio-translation/checkpoint-2/config.json
+Configuration saved in ./neuroscience-to-dev-bio-translation/checkpoint-2/config.json
+Model weights saved in ./neuroscience-to-dev-bio-translation/checkpoint-2/pytorch_model.bin
+Model weights saved in ./neuroscience-to-dev-bio-translation/checkpoint-2/pytorch_model.bin
+tokenizer config file saved in ./neuroscience-to-dev-bio-translation/checkpoint-2/tokenizer_config.json
+tokenizer config file saved in ./neuroscience-to-dev-bio-translation/checkpoint-2/tokenizer_config.json
+Special tokens file saved in ./neuroscience-to-dev-bio-translation/checkpoint-2/special_tokens_map.json
+Special tokens file saved in ./neuroscience-to-dev-bio-translation/checkpoint-2/special_tokens_map.json
+/opt/conda/lib/python3.8/site-packages/transformers/trainer.py:1355: FutureWarning: Non-finite norm encountered in torch.nn.utils.clip_grad_norm_; continuing anyway. Note that the default behavior will change in a future release to error out if a non-finite total norm is encountered. At that point, setting error_if_nonfinite=false will be required to retain the old behavior.
+  nn.utils.clip_grad_norm_(
+15%|█▌        | 3/20 [01:29<10:41, 37.71s/it]
+{'loss': 11.4204, 'learning_rate': 1e-06, 'epoch': 2.91}
+15%|█▌        | 3/20 [01:29<10:41, 37.71s/it]
+***** Running Evaluation *****
+***** Running Evaluation *****
+Num examples = 18
+  Batch size = 1
+Num examples = 18
+  Batch size = 1
+0%|          | 0/18 [00:00<?, ?it/s]#033[A
+17%|█▋        | 3/18 [00:00<00:00, 22.96it/s]#033[A
+33%|███▎      | 6/18 [00:00<00:00, 17.74it/s]#033[A
+44%|████▍     | 8/18 [00:00<00:00, 16.79it/s]#033[A
+56%|█████▌    | 10/18 [00:00<00:00, 16.25it/s]#033[A
+67%|██████▋   | 12/18 [00:00<00:00, 15.91it/s]#033[A
+78%|███████▊  | 14/18 [00:00<00:00, 15.69it/s]#033[A
+89%|████████▉ | 16/18 [00:00<00:00, 15.55it/s]#033[A
+100%|██████████| 18/18 [00:01<00:00, 15.45it/s]#033[A
+#033[A
+{'eval_loss': 12.064590454101562, 'eval_runtime': 1.1814, 'eval_samples_per_second': 15.236, 'eval_steps_per_second': 15.236, 'epoch': 2.91}
+15%|█▌        | 3/20 [01:31<10:41, 37.71s/it]
+100%|██████████| 18/18 [00:01<00:00, 15.45it/s]#033[A
+#033[A
+Saving model checkpoint to ./neuroscience-to-dev-bio-translation/checkpoint-3
+Saving model checkpoint to ./neuroscience-to-dev-bio-translation/checkpoint-3
+Configuration saved in ./neuroscience-to-dev-bio-translation/checkpoint-3/config.json
+Configuration saved in ./neuroscience-to-dev-bio-translation/checkpoint-3/config.json
+Model weights saved in ./neuroscience-to-dev-bio-translation/checkpoint-3/pytorch_model.bin
+Model weights saved in ./neuroscience-to-dev-bio-translation/checkpoint-3/pytorch_model.bin
+tokenizer config file saved in ./neuroscience-to-dev-bio-translation/checkpoint-3/tokenizer_config.json
+tokenizer config file saved in ./neuroscience-to-dev-bio-translation/checkpoint-3/tokenizer_config.json
+Special tokens file saved in ./neuroscience-to-dev-bio-translation/checkpoint-3/special_tokens_map.json
+Special tokens file saved in ./neuroscience-to-dev-bio-translation/checkpoint-3/special_tokens_map.json
+Traceback (most recent call last):
+  File "neuroscience_to_dev_bio.py", line 326, in <module>
+trainer.train()
+  File "/opt/conda/lib/python3.8/site-packages/transformers/trainer.py", line 1391, in train
+self._maybe_log_save_evaluate(tr_loss, model, trial, epoch, ignore_keys_for_eval)
+  File "/opt/conda/lib/python3.8/site-packages/transformers/trainer.py", line 1495, in _maybe_log_save_evaluate
+self._save_checkpoint(model, trial, metrics=metrics)
+  File "/opt/conda/lib/python3.8/site-packages/transformers/trainer.py", line 1557, in _save_checkpoint
+self.save_model(output_dir)
+  File "/opt/conda/lib/python3.8/site-packages/transformers/trainer.py", line 1961, in save_model
+self._save(output_dir)
+  File "/opt/conda/lib/python3.8/site-packages/transformers/trainer.py", line 2011, in _save
+self.tokenizer.save_pretrained(output_dir)
+  File "/opt/conda/lib/python3.8/site-packages/transformers/tokenization_utils_base.py", line 2044, in save_pretrained
+save_files = self._save_pretrained(
+  File "/opt/conda/lib/python3.8/site-packages/transformers/tokenization_utils_fast.py", line 579, in _save_pretrained
+self.backend_tokenizer.save(tokenizer_file)
+Exception: No space left on device (os error 28)
+15%|█▌        | 3/20 [01:52<10:40, 37.67s/it]
+2022-06-05 12:15:55,118 sagemaker-training-toolkit ERROR    Reporting training FAILURE
+2022-06-05 12:15:55,118 sagemaker-training-toolkit ERROR    ExecuteUserScriptError:
+ExitCode 1
+ErrorMessage ""
+Command "/opt/conda/bin/python3.8 neuroscience_to_dev_bio.py --epochs 1 --model_name neuroscience-to-dev-bio"
+2022-06-05 12:15:55,118 sagemaker-training-toolkit ERROR    Encountered exit_code 1
