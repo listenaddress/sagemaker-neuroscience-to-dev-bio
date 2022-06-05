@@ -7,10 +7,12 @@ from transformers import AutoTokenizer, Seq2SeqTrainingArguments, PegasusForCond
 import numpy as np
 
 nltk.download('punkt')
-
 model_name = 'google/pegasus-large'
 metric = load_metric("rouge")
+
 EARLY_STOP_ON_VAL_LOSS = True
+
+print('**** TRAINING!')
 
 training_translations_list = [
     {'idx': 0, 'neuroscience': 'The human brain has many properties that are common to all vertebrate brains.',
@@ -265,17 +267,17 @@ def prepare_fine_tuning(model_name, tokenizer, train_dataset, val_dataset=None, 
         output_dir=output_dir,           # output directory
         num_train_epochs=20,            # total number of training epochs
         # compute the gradients 8 times and average them before taking a step
-        gradient_accumulation_steps=32,
+        gradient_accumulation_steps=8,
         # batch size per device during training, can increase if memory allows
         per_device_train_batch_size=1,
         # batch size for evaluation, can increase if memory allows
         per_device_eval_batch_size=1,
         fp16=True,                       # lower precision floating points
-        save_steps=300,                  # number of updates steps before checkpoint saves
+        #         save_steps=300,                  # number of updates steps before checkpoint saves
         # limit the total amount of checkpoints and deletes the older checkpoints
         save_total_limit=2,
         evaluation_strategy='epoch',     # evaluation strategy to adopt during training
-        warmup_steps=500,                # number of warmup steps for learning rate scheduler
+        warmup_steps=100,                # number of warmup steps for learning rate scheduler
         weight_decay=0.01,               # strength of weight decay
         logging_dir='./logs',            # directory for storing logs
         logging_strategy='epoch',
@@ -284,6 +286,7 @@ def prepare_fine_tuning(model_name, tokenizer, train_dataset, val_dataset=None, 
         load_best_model_at_end=True,
         metric_for_best_model='RougeL' if not EARLY_STOP_ON_VAL_LOSS else 'loss',
         predict_with_generate=True,
+        skip_memory_metrics=False,
         # push_to_hub=True,
     )
 
@@ -316,15 +319,13 @@ if __name__ == '__main__':
         format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     )
 
-    logger.log(logging.INFO, "STARTING TRAININGGGGGG")
+    logger.log(logging.INFO, "STARTING TRAINING")
 
     train_dataset, val_dataset, test_dataset, tokenizer = prepare_data(
         model_name, train_texts, train_labels, val_texts=val_texts, val_labels=val_labels, test_texts=test_texts, test_labels=test_labels)
     trainer = prepare_fine_tuning(
         model_name, tokenizer, train_dataset=train_dataset, val_dataset=val_dataset)
     trainer.train()
-    trainer.predict(test_dataset)
-    trainer.save_model()
 
 rouge = load_metric('rouge')
 max_length = 128
@@ -353,5 +354,5 @@ beam_output = model.generate(
     early_stopping=True
 )
 
-print("***** PREDICTION")
+print("PREDICTION")
 print(tokenizer.decode(beam_output[0]))
